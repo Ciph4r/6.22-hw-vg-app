@@ -1,0 +1,15 @@
+
+    <div id= 'userbanner'>
+        <div >
+            <% if (user) { %>
+            <h1>You are now logged in as <%= user.name %> </h1>
+            <% } %>
+        </div>
+        <div> 
+            <a href="/home">Home</a>
+            <a href="/favorites">Show Favorites</a>
+        </div>
+        <div id ='logout'>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>

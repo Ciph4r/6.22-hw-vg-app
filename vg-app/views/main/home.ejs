@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
+        <%- include('../partials/header') %> 
         <div >
             <% if (errors.length > 0 ) { %>
                 <%= errors %> 
@@ -19,8 +20,6 @@
                <% if (success.length > 0 ) { %>
                 <%= success %> 
                <% } %>
-
-
         </div>
        
         <div id ='container'>
@@ -53,6 +52,7 @@
                     </div>
                 </div>
             <% }) %>
+
                 <div id= 'addgames'>
                     <% if (user.admin) { %>
                         <div>

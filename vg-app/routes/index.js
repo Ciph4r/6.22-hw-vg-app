@@ -20,7 +20,7 @@ router.get('/delete/:id' ,auth, controller.delete)
 router.get('/game/:id' , controller.game)
 router.post('/addgames' ,auth, controller.addGames)
 router.get('/addtofav/:gameId' , controller.fav)
-
+router.get('/favorites',controller.showFav)
 
 
 router.post('/login',

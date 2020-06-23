@@ -135,19 +135,22 @@ module.exports = {
     },
     fav: (req,res) => {
         User.findById(req.user._id).then(currentUser => {
-          const exist =  currentUser.favorite.filter(x => x === '5ef243828a3dd15d8cf5927a' )
-        //   console.log(exist)
-        //   console.log(currentUser.favorite)
-          console.log(JSON.stringify(currentUser.favorite[0]))
-        
-            // currentUser.favorite.push(req.params.gameId)
-            // currentUser.save()
-            // req.flash('success', `added to favorites`);
-            // return res.redirect('back')
+        //   const exist =  currentUser.favorite.filter(x => x === '5ef243828a3dd15d8cf5927a' )
+        // //   console.log(exist)
+        // //   console.log(currentUser.favorite)
+            currentUser.favorite.push(req.params.gameId)
+            currentUser.save()
+            req.flash('success', `added to favorites`);
+            return res.redirect('back')
         })
         
     },
 
+    showFav: (req,res) => {
+        User.findById(req.user._id).populate('favorite').exec((err , fav) =>{
+            res.render('main/fav',{fav})
+        })
+    },
 
     login: (req, res) => {
         res.render('main/home')

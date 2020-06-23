@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div >
+            <% if (errors.length > 0 ) { %>
+                <%= errors %> 
+               <% } %>
+               <% if (success.length > 0 ) { %>
+                <%= success %> 
+               <% } %>
+
+
+        </div>
+       
+        <div id ='container'>
+            <% data.forEach(game => { %>
+                <div id = 'main'>
+                    <div id =''>
+                        <img id = 'img' src="<%= game.image %> " alt="..." />
+                        
+                            <% if (user.admin) { %>
+                                <div>
+                                    <form class="" form action="/delete/<%= game._id %>" method="GET">
+                                        <div class="">
+                                            <button class="" type="submit">
+                                              DELETE
+                                            </button>
+                                        </div>
+                                      </form>
+                                </div>
+                            <% } %>
+                        
+                    </div>
+                    <div>
+                        <div id='info'>
+                            <div>
+                                <a id = 'name' href="/game/<%= game._id %>"> <%= game.title %> </a>
+                            </div>
+                        </div>
+
+                    
+                    </div>
+                </div>
+            <% }) %>
+                <div id= 'addgames'>
+                    <% if (user.admin) { %>
+                        <div>
+                            <form class="" form action="/addgames" method="POST">
+                                <div class="">
+                                    <h4>Title</h4>
+                                    <input class="" type="text" id="title" name="title">
+                                    <h4>Description</h4>
+                                    <input class="" type="text" id="description" name="description">
+                                    <h4>Year Released</h4>
+                                    <input class="" type="text" id="yearreleased" name="yearreleased">
+                                    <h4>Play Time</h4>
+                                    <input class="" type="text" id="playtime" name="playtime">
+                                    <h4>Image Link</h4>
+                                    <input class="" type="text" id="image" name="image">
+                                    <button class="" type="submit">
+                                      ADD GAMES
+                                    </button>
+                                </div>
+                              </form>
+                        </div>
+                    <% } %>
+                </div>
+  
+            </div>
+
+
+
+
+
+
+
+        <script src="" async defer></script>
+    </body>
+</html>

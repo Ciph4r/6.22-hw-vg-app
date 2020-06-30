@@ -1,15 +1,26 @@
 
-    <div id= 'userbanner'>
-        <div >
-            <% if (user) { %>
-            <h1>You are now logged in as <%= user.name %> </h1>
-            <% } %>
-        </div>
-        <div> 
-            <a href="/home">Home</a>
-            <a href="/favorites">Show Favorites</a>
-        </div>
-        <div id ='logout'>
-            <a href="/logout">Logout</a>
-        </div>
+        <script src="" async defer></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <style>
+            .card-img-top {
+                height: 400px;
+                
+              }
+              .col-md-4 {
+                margin-top: 100px;
+        }
+        </style>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <% if (user) { %> <span style="color:white"> Hello &nbsp: <%= user.name.toUpperCase() %> </span>
+    <div> 
+        <a style="color:grey" href="/home">Home</a>
+        <a style="color:grey" href="/favorites">Show Favorites</a>
     </div>
+       <span style="color:grey" class="myNavLogout">
+         <a style="color: grey" href="/logout">Logout </a>
+      </span>
+      <% } %>
+
+    </nav>

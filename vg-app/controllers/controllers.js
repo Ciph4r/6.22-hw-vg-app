@@ -138,6 +138,8 @@ module.exports = {
         //   const exist =  currentUser.favorite.filter(x => x === '5ef243828a3dd15d8cf5927a' )
         // //   console.log(exist)
         // //   console.log(currentUser.favorite)
+
+        
             currentUser.favorite.push(req.params.gameId)
             currentUser.save()
             req.flash('success', `added to favorites`);

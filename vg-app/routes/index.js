@@ -17,10 +17,10 @@ router.get('/' , controller.index)
 router.post('/register' , controller.signup)
 router.get('/home' , auth ,controller.home)
 router.get('/delete/:id' ,auth, controller.delete)
-router.get('/game/:id' , controller.game)
+router.get('/game/:id' ,auth, controller.game)
 router.post('/addgames' ,auth, controller.addGames)
-router.get('/addtofav/:gameId' , controller.fav)
-router.get('/favorites',controller.showFav)
+router.get('/addtofav/:gameId',auth , controller.fav)
+router.get('/favorites',auth,controller.showFav)
 
 
 router.post('/login',

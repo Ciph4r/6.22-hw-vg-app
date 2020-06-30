@@ -18,22 +18,46 @@
                <% } %>
         </div>
 
-        <div>
-            <% fav.favorite.forEach(game => { %>
-                <div id = 'main'>
-                    <div id =''>
-                        <img id = 'img' src="<%= game.image %> " alt="..." />
+        <div id="container" class="fluid">
+            <main role="main">
+             
+              <div class="container">
+                <div class="row">
+                      <% fav.favorite.forEach(game => { %>
+                          <div class="col-md-4" style="width:20rem;">
+                              <div class="card">
+                              <img id = 'img' src="<%= game.image %> " alt="..." class="card-img-top"/>
+                              <div class="card-body">
+                                  <a id = 'name' href="/game/<%= game._id %>"> <%= game.title %> </a>
+                                </div>
                     </div>
-                    <div>
-                        <div id='info'>
-                            <div>
-                                <a id = 'name' href="/game/<%= game._id %>"> <%= game.title %> </a>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
+                  <% }) %>
+
                 </div>
-            <% }) %>
-        </div>
+              </div>
+            </main>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <script src="" async defer></script>
     </body>
 </html>
